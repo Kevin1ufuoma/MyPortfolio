@@ -1,5 +1,4 @@
 
-/* Typography Token Mapping Pipeline */
 :root {
     --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --heading-font: "Raleway", sans-serif;
@@ -30,14 +29,13 @@
     --nav-dropdown-hover-color: #0078ff;
 }
 
-/* Contextual Section Preset Color Themes (Replaces Bootstrap theme hooks) */
+/* Contextual Section Preset Color Themes*/
 .light-background {
     --background-color: #f9f9f9;
     --surface-color: #ffffff;
 }
 
 .dark-theme-bg {
-    /* Matched directly to your converted dark image layout container class */
     --background-color: #060606;
     --default-color: #ffffff;
     --heading-color: #ffffff;
@@ -46,7 +44,6 @@
 }
 
 .accent-theme-bg {
-    /* Matched directly to your converted stats/testimonials wrapper class */
     --background-color: #0078ff;
     --default-color: #ffffff;
     --heading-color: #ffffff;
@@ -56,7 +53,6 @@
 }
 
 
-/* Enforce strict padding/margin bounds on all viewport canvas dimensions */
 *,
 *::before,
 *::after {
@@ -65,14 +61,12 @@
     padding: 0;
 }
 
-/* Global Viewport Alignment Safety Parameters */
 html {
     scroll-behavior: smooth;
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
 
-/* Global Body Container Safeguard Layer (Locks horizontal drawer spillage out) */
 body {
     width: 100%;
     max-width: 100%;
@@ -88,7 +82,6 @@ body {
     transition: background-color var(--transition-smooth), color var(--transition-smooth);
 }
 
-/* Typography Scale Balancing Rules (Bootstrap Hierarchy Equivalents) */
 h1,
 h2,
 h3,
@@ -106,7 +99,6 @@ p {
     margin-bottom: 1rem;
 }
 
-/* Link State Reset Components */
 a {
     color: var(--accent-color);
     text-decoration: none;
@@ -117,7 +109,6 @@ a:hover {
     text-decoration: none;
 }
 
-/* Responsive Asset Constraints */
 img,
 svg {
     vertical-align: middle;
@@ -125,7 +116,6 @@ svg {
     height: auto;
 }
 
-/* Native Control Cleaners */
 button,
 input,
 textarea {
@@ -137,8 +127,6 @@ textarea {
 
 
 
-
-/* Anchor Link Active Interactivity Configuration */
 a {
     color: var(--accent-color);
     text-decoration: none;
@@ -146,44 +134,36 @@ a {
 }
 
 a:hover {
-    /* Preserved your custom color-mix rule for a framework-free hover state */
     color: color-mix(in srgb, var(--accent-color), transparent 25%);
     text-decoration: none;
 }
 
 
-/* Common parameters for validation feedback windows */
 .form-status-msg {
     display: none;
     padding: 15px;
     margin-bottom: 24px;
     font-weight: 600;
     border-radius: 6px;
-    /* Added clean card borders to match standard layouts */
 }
 
-/* Diagnostic Error Notification Window Style */
 .clean-interactive-form .form-error {
     background: #df1529;
     color: #ffffff;
     text-align: left;
 }
-
-/* Live Operational Success Transmission Badge Style */
 .clean-interactive-form .form-sent {
     color: #ffffff;
     background: #059652;
     text-align: center;
 }
 
-/* Form submission spinner container box */
 .clean-interactive-form .form-loading {
     background: var(--surface-color);
     text-align: center;
     border: 1px solid var(--border-color);
 }
 
-/* Pure CSS Asynchronous Loading Pointer Vector */
 .clean-interactive-form .form-loading::before {
     content: "";
     display: inline-block;
@@ -196,7 +176,6 @@ a:hover {
     animation: clean-form-loading-spinner 1s linear infinite;
 }
 
-/* Operational Matrix Keyframe Timeline Engine */
 @keyframes clean-form-loading-spinner {
     0% {
         transform: rotate(0deg);
@@ -207,9 +186,6 @@ a:hover {
     }
 }
 
-
-
-
 .sticky-header {
     --background-color: #000000;
     --default-color: #ffffff;
@@ -218,7 +194,6 @@ a:hover {
     background-color: var(--background-color);
     padding: 20px 0;
     position: fixed;
-    /* Ensures header is locked down at screen top */
     top: 0;
     left: 0;
     width: 100%;
@@ -226,11 +201,9 @@ a:hover {
     z-index: 997;
 }
 
-/* Framework-Free Header Container matching standard Bootstrap width limits */
 .header-container {
     width: 100%;
     max-width: 1320px;
-    /* Bootstrap xl/xxl fluid container equivalent */
     margin: 0 auto;
     padding: 0 var(--grid-gutter);
     display: flex;
@@ -239,7 +212,6 @@ a:hover {
     position: relative;
 }
 
-/* Brand Logo Vector Branding Wrapper */
 .logo-link {
     display: flex;
     align-items: center;
@@ -261,15 +233,12 @@ a:hover {
     color: var(--heading-color);
 }
 
-/* Triggered dynamically via upcoming jQuery scroll watcher */
 body.viewport-scrolled .sticky-header {
     box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
 }
 
 
 @media (min-width: 1200px) {
-
-    /* Hides the mobile menu icon trigger entirely on desktop screens */
     .mobile-nav-toggle {
         display: none;
     }
@@ -296,7 +265,6 @@ body.viewport-scrolled .sticky-header {
         padding-right: 0;
     }
 
-    /* Primary Anchor Links Interaction Configuration */
     .navigation-menu .nav-link {
         color: var(--nav-color);
         font-size: 15px;
@@ -311,7 +279,6 @@ body.viewport-scrolled .sticky-header {
         position: relative;
     }
 
-    /* Dropdown indicator icons alignment setup */
     .navigation-menu .nav-link .toggle-dropdown-icon {
         font-size: 12px;
         line-height: 0;
@@ -319,7 +286,6 @@ body.viewport-scrolled .sticky-header {
         transition: var(--transition-smooth);
     }
 
-    /* Premium Micro-Interactive Animated Slide Underline Link Accent */
     .navigation-menu .nav-list>li>.nav-link::before {
         content: "";
         position: absolute;
@@ -345,7 +311,6 @@ body.viewport-scrolled .sticky-header {
     }
 
     
-    /* Primary Level Dropdown Wrapper */
     .navigation-menu .has-dropdown .dropdown-menu {
         margin: 0;
         padding: 10px 0;
@@ -389,21 +354,17 @@ body.viewport-scrolled .sticky-header {
         color: var(--nav-dropdown-hover-color);
     }
 
-    /* Reveal Dropdown cleanly on list node hover triggers */
     .navigation-menu .has-dropdown:hover>.dropdown-menu {
         opacity: 1;
         top: 100%;
         visibility: visible;
     }
-
-    /* Deep Level Subnested Dropdown Alignment Mapping */
     .navigation-menu .deep-dropdown .nested-menu {
         top: 0;
         left: -90%;
         visibility: hidden;
     }
 
-    /* Flips deep dropdown menu safely over to avoid clipping view bounds */
     .navigation-menu .deep-dropdown:hover>.nested-menu {
         opacity: 1;
         top: 0;
@@ -413,11 +374,7 @@ body.viewport-scrolled .sticky-header {
 }
 
 
-
-
 @media (max-width: 1199px) {
-
-    /* Fixes the invisible mobile nav toggle bug */
     .mobile-nav-toggle {
         display: inline-flex !important;
         /* Forces it to show on small screens */
@@ -426,21 +383,18 @@ body.viewport-scrolled .sticky-header {
         min-width: 44px;
         min-height: 44px;
         color: #ffffff !important;
-        /* Changes icon to white so it stands out against a dark header background */
         font-size: 28px;
         cursor: pointer;
         position: relative;
         z-index: 10001;
     }
 
-    /* Text backup fallback if font CDNs are blocked or slow */
     .mobile-nav-toggle::after {
         content: " ☰";
         font-family: Arial, sans-serif;
         font-size: 24px;
     }
 
-    /* Smoothly suppresses the emoji symbol once FontAwesome completes loading */
     .mobile-nav-toggle.fa-bars::after {
         display: none;
     }
@@ -451,7 +405,6 @@ body.viewport-scrolled .sticky-header {
         z-index: 9997;
     }
 
-    /* The Mobile Menu Box Dropdown Layer (Hidden by default) */
     .navigation-menu .nav-list {
         display: none;
         list-style: none;
@@ -463,13 +416,11 @@ body.viewport-scrolled .sticky-header {
         background-color: var(--nav-mobile-background-color);
         border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        /* Replaced template rule for structural elevation drop depth */
         overflow-y: auto;
         transition: var(--transition-smooth);
         z-index: 9998;
     }
 
-    /* Mobile Dropdown Nav Links Styling */
     .navigation-menu .nav-link {
         color: var(--nav-dropdown-color);
         padding: 10px 20px;
@@ -483,7 +434,6 @@ body.viewport-scrolled .sticky-header {
         transition: var(--transition-smooth);
     }
 
-    /* Mobile Dropdown Indicator Circle Badge Triggers */
     .navigation-menu .nav-link .toggle-dropdown-icon {
         font-size: 12px;
         line-height: 0;
@@ -502,25 +452,20 @@ body.viewport-scrolled .sticky-header {
         background-color: var(--accent-color);
         color: var(--contrast-color);
     }
-
-    /* Hover and Active Link States across Mobile Canvas Panels */
     .navigation-menu .nav-link:hover,
     .navigation-menu .nav-link.active {
         color: var(--nav-dropdown-hover-color);
     }
 
-    /* Dynamic Active state icon rotation parameters managed via jQuery triggers */
     .navigation-menu .nav-link.active .toggle-dropdown-icon {
         background-color: var(--accent-color);
         color: var(--contrast-color);
         transform: rotate(180deg);
     }
 
-    /* Submenu lists stacked flatly under their parents on small screens */
     .navigation-menu .has-dropdown .dropdown-menu {
         position: static;
         display: none;
-        /* Controlled programmatically via smooth jQuery slideToggle animations */
         z-index: 99;
         padding: 10px 0;
         margin: 10px 20px;
@@ -530,24 +475,19 @@ body.viewport-scrolled .sticky-header {
         transition: all 0.5s ease-in-out;
     }
 
-    /* Deep nested items gain additional dark tint backplate spacing */
     .navigation-menu .deep-dropdown .nested-menu {
         background-color: rgba(33, 37, 41, 0.1);
     }
 
-    /* Active Open sub-menus display block parameters */
     .navigation-menu .has-dropdown>.dropdown-menu.dropdown-active {
         display: block;
         background-color: rgba(33, 37, 41, 0.03);
     }
 
-    
-    /* Prevents background page scrolling when mobile menu drawer panel window is open */
     body.mobile-nav-active {
         overflow: hidden;
     }
 
-    /* Relocates close button floating fixed to upper right viewpoint frame edge */
     body.mobile-nav-active .mobile-nav-toggle {
         color: #ffffff;
         position: fixed;
@@ -558,26 +498,20 @@ body.viewport-scrolled .sticky-header {
         z-index: 9999;
     }
 
-    /* Blurs out base page content with frosted backdrop shadow sheet parameter */
     body.mobile-nav-active .navigation-menu {
         position: fixed;
         overflow: hidden;
         inset: 0;
         background: rgba(33, 37, 41, 0.8);
         backdrop-filter: blur(4px);
-        /* Premium framework-free addition matching modern glass rules */
         -webkit-backdrop-filter: blur(4px);
         transition: var(--transition-smooth);
     }
 
-    /* Forces hidden list grid array box back into immediate display layer view */
     body.mobile-nav-active .navigation-menu .nav-list {
         display: block;
     }
 }
-
-
-
 
 .main-footer {
     color: var(--default-color);
@@ -588,7 +522,6 @@ body.viewport-scrolled .sticky-header {
     width: 100%;
 }
 
-/* Framework-Free Footer Flex Alignment Layout */
 .footer-container {
     width: 100%;
     max-width: 1320px;
@@ -605,7 +538,6 @@ body.viewport-scrolled .sticky-header {
     margin-bottom: 0;
 }
 
-/* Horizontal Row for Social Platform Anchors */
 .main-footer .footer-social-links-row {
     display: flex;
     justify-content: center;
@@ -613,7 +545,6 @@ body.viewport-scrolled .sticky-header {
     margin-top: 20px;
 }
 
-/* Clean, Circular Social Media Media Indicator Badges */
 .main-footer .footer-social-links-row a {
     display: flex;
     align-items: center;
@@ -621,7 +552,6 @@ body.viewport-scrolled .sticky-header {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    /* Preserved your native srgb transparency blend lines */
     border: 1px solid color-mix(in srgb, var(--default-color), transparent 30%);
     font-size: 16px;
     color: color-mix(in srgb, var(--default-color), transparent 40%);
@@ -629,7 +559,6 @@ body.viewport-scrolled .sticky-header {
     transition: all var(--transition-smooth);
 }
 
-/* Social link interactive invert lift */
 .main-footer .footer-social-links-row a:hover {
     color: var(--default-color);
     border-color: var(--default-color);
@@ -637,7 +566,6 @@ body.viewport-scrolled .sticky-header {
     /* Micro-elevation hover effect added */
 }
 
-/* Credits & Licensing Section */
 .main-footer .footer-credits-box {
     margin-top: 10px;
     font-size: 13px;
@@ -667,14 +595,12 @@ body.viewport-scrolled .sticky-header {
     height: 44px;
     border-radius: 50px;
     display: inline-flex;
-    /* Added framework-free centering matrix mechanics */
     align-items: center;
     justify-content: center;
     transition: all 0.4s var(--transition-smooth);
     text-decoration: none;
 }
 
-/* Icon layout adjustments inside the container */
 .scroll-to-top-btn i {
     font-size: 24px;
     color: var(--contrast-color);
@@ -682,7 +608,6 @@ body.viewport-scrolled .sticky-header {
     /* Fixed 0-height baseline glitch for standard vector fonts */
 }
 
-/* Scroll action hovering backdrop shift */
 .scroll-to-top-btn:hover {
     background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
     color: var(--contrast-color);
@@ -690,7 +615,6 @@ body.viewport-scrolled .sticky-header {
     /* Added micro-lift animation effect */
 }
 
-/* Active visible state managed dynamically via upcoming jQuery scroll listener */
 .scroll-to-top-btn.active {
     visibility: visible;
     opacity: 1;
@@ -698,7 +622,6 @@ body.viewport-scrolled .sticky-header {
 }
 
 
-/* Disables sequential entrance delays on smaller mobile device glass surfaces */
 @media screen and (max-width: 768px) {
     [data-delay] {
         transition-delay: 0s !important;
@@ -708,7 +631,6 @@ body.viewport-scrolled .sticky-header {
 
 
 .page-title-banner {
-    /* Preserved your custom layout blend percentage ratio */
     --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
     color: var(--default-color);
     background-color: var(--background-color);
@@ -717,7 +639,6 @@ body.viewport-scrolled .sticky-header {
     width: 100%;
 }
 
-/* Framework-Free Fluid Flex Layout Row Container */
 .page-title-container {
     width: 100%;
     max-width: 1320px;
@@ -727,7 +648,6 @@ body.viewport-scrolled .sticky-header {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    /* Lined up nicely: Title Left, Breadcrumbs Right */
 }
 
 .page-title-banner .main-title-text {
@@ -735,10 +655,8 @@ body.viewport-scrolled .sticky-header {
     font-weight: 700;
     font-family: var(--heading-font);
     margin-bottom: 0;
-    /* Clear grid line block collision */
 }
 
-/* Breadcrumb navigation list wrapper */
 .page-title-banner .breadcrumbs-nav-list {
     display: flex;
     flex-wrap: wrap;
@@ -750,12 +668,10 @@ body.viewport-scrolled .sticky-header {
     font-family: var(--nav-font);
 }
 
-/* Spacing layout padding adjustment between adjacent list entries */
 .page-title-banner .breadcrumbs-nav-list li+li {
     padding-left: 10px;
 }
 
-/* Automatic pseudo-element divider generation matrix */
 .page-title-banner .breadcrumbs-nav-list li+li::before {
     content: "/";
     display: inline-block;
@@ -763,7 +679,6 @@ body.viewport-scrolled .sticky-header {
     color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-/* Adaptive mobile adjustment so things stack gracefully when screen space shrinks */
 @media (max-width: 768px) {
     .page-title-container {
         flex-direction: column;
@@ -773,8 +688,6 @@ body.viewport-scrolled .sticky-header {
 }
 
 
-
-/* Replaces base tag rules with your clean semantic section layout classes */
 .hero-section,
 .about-section,
 .resume-section,
@@ -788,14 +701,11 @@ body.viewport-scrolled .sticky-header {
     color: var(--default-color);
     background-color: var(--background-color);
     padding: 60px 0;
-    /* Leaves exact breathing room above headers when navigating via anchor menus */
     scroll-margin-top: 92px;
     overflow: clip;
-    /* Modern safe clipping alternative to hidden overflows */
     width: 100%;
 }
 
-/* Responsive adjustment for sticky header heights on smaller tablet device canvases */
 @media (max-width: 1199px) {
 
     .hero-section,
@@ -828,7 +738,6 @@ body.viewport-scrolled .sticky-header {
     padding-right: var(--grid-gutter);
 }
 
-/* Section Main Heading Elements */
 .resume-section-title-wrap h2,
 .services-section-title-wrap h2,
 .portfolio-section-title-wrap h2,
@@ -843,7 +752,6 @@ body.viewport-scrolled .sticky-header {
     position: relative;
 }
 
-/* Premium Visual Anchor: Automatic decorative colored banner accent bar generator */
 .resume-section-title-wrap h2::after,
 .services-section-title-wrap h2::after,
 .portfolio-section-title-wrap h2::after,
@@ -861,7 +769,6 @@ body.viewport-scrolled .sticky-header {
     margin: auto;
 }
 
-/* Section Subheading Paragraph Content */
 .resume-section-title-wrap p,
 .services-section-title-wrap p,
 .portfolio-section-title-wrap p,
@@ -871,8 +778,6 @@ body.viewport-scrolled .sticky-header {
     color: var(--default-color);
     margin-bottom: 0;
 }
-
-
 
 .hero-section {
     width: 100%;
@@ -884,7 +789,6 @@ body.viewport-scrolled .sticky-header {
     justify-content: center;
 }
 
-/* Background Wallpaper Asset Constraints */
 .hero-section .hero-bg-img {
     position: absolute;
     inset: 0;
@@ -895,7 +799,6 @@ body.viewport-scrolled .sticky-header {
     z-index: 1;
 }
 
-/* Ambient Visual Backdrop Dark Overlay Mesh Layer */
 .hero-section::before {
     content: "";
     background: color-mix(in srgb, var(--background-color), transparent 30%);
@@ -904,7 +807,6 @@ body.viewport-scrolled .sticky-header {
     z-index: 2;
 }
 
-/* Foreground Centered Content Wrapper Block */
 .hero-section .hero-content-wrapper {
     position: relative;
     text-align: center;
@@ -931,7 +833,6 @@ body.viewport-scrolled .sticky-header {
     letter-spacing: 1px;
 }
 
-/* Responsive Font Scaling Breakpoints matching standard Bootstrap sizes */
 @media (max-width: 768px) {
     .hero-section .hero-title {
         font-size: 32px;
@@ -952,7 +853,6 @@ body.viewport-scrolled .sticky-header {
     margin: 0 auto;
 }
 
-/* Replaces Bootstrap Row/Col column structures with native modern CSS Grid */
 .about-section .about-split-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -961,7 +861,6 @@ body.viewport-scrolled .sticky-header {
     align-items: start;
 }
 
-/* Sub-Row arrangement inside Profile block containing metadata details */
 .about-section .profile-details-wrapper {
     display: flex;
     flex-direction: row;
@@ -990,7 +889,6 @@ body.viewport-scrolled .sticky-header {
     margin-bottom: 12px;
 }
 
-/* Skill Progress Bars Header Element styling */
 .about-section .skills-heading {
     font-size: 18px;
     font-weight: 700;
@@ -1020,14 +918,12 @@ body.viewport-scrolled .sticky-header {
     font-style: normal;
 }
 
-/* Outer Progress Indicator track channel vector layout */
 .about-section .custom-progress-track {
     background: color-mix(in srgb, var(--default-color), transparent 90%);
     height: 10px;
     width: 100%;
 }
 
-/* Dynamic Inner fill gauge extraction logic pulling variables directly from HTML markup tags */
 .about-section .custom-progress-fill {
     width: var(--progress-width, 1px);
     height: 10px;
@@ -1035,7 +931,6 @@ body.viewport-scrolled .sticky-header {
     background-color: var(--accent-color);
 }
 
-/* Right Column Biography Layout Panel blocks */
 .about-section .biography-heading {
     font-size: 28px;
     position: relative;
@@ -1045,7 +940,6 @@ body.viewport-scrolled .sticky-header {
     font-family: var(--heading-font);
 }
 
-/* Visual underline separator rule added underneath the section title */
 .about-section .biography-heading::after {
     content: "";
     position: absolute;
@@ -1063,11 +957,9 @@ body.viewport-scrolled .sticky-header {
     margin-bottom: 1.25rem;
 }
 
-/* Media optimization snapping grid into single columns on tablets/mobiles */
 @media (max-width: 991px) {
     .about-section .about-split-grid {
         grid-template-columns: 1fr;
-        /* Drops grid sections down vertically */
         gap: 30px;
     }
 }
@@ -1075,7 +967,6 @@ body.viewport-scrolled .sticky-header {
 @media (max-width: 576px) {
     .about-section .profile-details-wrapper {
         flex-direction: column;
-        /* Stacks avatar image completely on top of details on tiny screens */
         gap: 20px;
     }
 }
@@ -1089,7 +980,6 @@ body.viewport-scrolled .sticky-header {
     padding: 0 var(--grid-gutter);
 }
 
-/* Two-Column Side-by-Side Content Grid replacing Bootstrap row blocks */
 .resume-section .resume-timeline-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1106,7 +996,6 @@ body.viewport-scrolled .sticky-header {
     font-family: var(--heading-font);
 }
 
-/* Vertical Timeline Connector Tracks */
 .resume-section .timeline-card-item {
     padding: 0 0 20px 20px;
     margin-top: -2px;
@@ -1124,7 +1013,6 @@ body.viewport-scrolled .sticky-header {
     margin-bottom: 10px;
 }
 
-/* Date/Duration Indicator Badges */
 .resume-section .timeline-date-badge {
     font-size: 16px;
     padding: 5px 15px;
@@ -1135,12 +1023,10 @@ body.viewport-scrolled .sticky-header {
     border-radius: 4px;
 }
 
-/* Lists and Contact Elements configuration */
 .resume-section .timeline-contact-list,
 .resume-section .timeline-details-list {
     padding-left: 20px;
     list-style-type: square;
-    /* Clean semantic marker adjustment */
 }
 
 .resume-section .timeline-card-item li {
@@ -1152,7 +1038,6 @@ body.viewport-scrolled .sticky-header {
     padding-bottom: 0;
 }
 
-/* Interactive Node Node Matrix: Generates timeline circle vectors automatically */
 .resume-section .timeline-card-item::before {
     content: "";
     position: absolute;
@@ -1166,15 +1051,12 @@ body.viewport-scrolled .sticky-header {
     z-index: 2;
 }
 
-/* Snaps timeline column panels down stacked on small screen boundaries */
 @media (max-width: 991px) {
     .resume-section .resume-timeline-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 }
-
- 
 
 .services-section .services-container {
     width: 100%;
@@ -1183,14 +1065,12 @@ body.viewport-scrolled .sticky-header {
     padding: 0 var(--grid-gutter);
 }
 
-/* Auto-fitting, framework-free modular product deck grid matrix */
 .services-section .services-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
 
-/* Standalone Service Card Panels */
 .services-section .service-card-item {
     background-color: var(--surface-color);
     box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.08);
@@ -1203,7 +1083,6 @@ body.viewport-scrolled .sticky-header {
     height: 100%;
 }
 
-/* Centered Circular Icon Containers */
 .services-section .service-icon-box {
     color: var(--contrast-color);
     background: var(--accent-color);
@@ -1239,7 +1118,6 @@ body.viewport-scrolled .sticky-header {
     margin-bottom: 0;
 }
 
-/* Premium Hover Transitions */
 .services-section .service-card-item:hover {
     transform: translateY(-10px);
     border-bottom-color: var(--accent-color);
@@ -1249,7 +1127,6 @@ body.viewport-scrolled .sticky-header {
     color: var(--accent-color);
 }
 
-/* Responsive adjustment for tiny screens so grid layout panels stay balanced */
 @media (max-width: 576px) {
     .services-section .services-cards-grid {
         grid-template-columns: 1fr;
@@ -1264,7 +1141,6 @@ body.viewport-scrolled .sticky-header {
     width: 100%;
 }
 
-/* Background Presentation Image Constraints */
 .stats-counter-section .stats-bg-image {
     position: absolute;
     inset: 0;
@@ -1275,7 +1151,6 @@ body.viewport-scrolled .sticky-header {
     z-index: 1;
 }
 
-/* Translucent Structural Color Blend Layer Over Background */
 .stats-counter-section::before {
     content: "";
     background: color-mix(in srgb, var(--background-color), transparent 40%);
@@ -1293,7 +1168,6 @@ body.viewport-scrolled .sticky-header {
     padding: 0 var(--grid-gutter);
 }
 
-/* Framework-Free Balanced Columns Grid Matrix */
 .stats-counter-section .stats-metrics-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1306,7 +1180,6 @@ body.viewport-scrolled .sticky-header {
     width: 100%;
 }
 
-/* Big Numerical Counter Ticker Typography */
 .stats-counter-section .ticker-number-display {
     font-size: 48px;
     display: block;
@@ -1315,7 +1188,6 @@ body.viewport-scrolled .sticky-header {
     font-family: var(--default-font);
 }
 
-/* Ticker Metadata Label Text */
 .stats-counter-section .metric-label-text {
     padding: 0;
     margin: 0;
@@ -1325,7 +1197,6 @@ body.viewport-scrolled .sticky-header {
     color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
-/* Responsive breakdowns for metric columns */
 @media (max-width: 991px) {
     .stats-counter-section .stats-metrics-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1336,7 +1207,6 @@ body.viewport-scrolled .sticky-header {
 @media (max-width: 575px) {
     .stats-counter-section .stats-metrics-grid {
         grid-template-columns: 1fr;
-        /* Stacks completely flat on mobiles */
     }
 }
 
@@ -1348,7 +1218,6 @@ body.viewport-scrolled .sticky-header {
     padding: 0 var(--grid-gutter);
 }
 
-/* Gallery Category Navigation Menu Tab Row */
 .portfolio-section .gallery-filter-menu {
     padding: 0;
     margin: 0 auto 30px auto;
@@ -1360,7 +1229,6 @@ body.viewport-scrolled .sticky-header {
     cursor: pointer;
     display: inline-block;
     padding: 8px 18px;
-    /* Added internal button balance pads */
     font-size: 16px;
     font-weight: 600;
     margin: 0 5px;
@@ -1383,7 +1251,6 @@ body.viewport-scrolled .sticky-header {
     }
 }
 
-/* High-Performance Flexible Response Grid replacing Isotope/Bootstrap Row constraints */
 .portfolio-section .gallery-items-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -1395,7 +1262,6 @@ body.viewport-scrolled .sticky-header {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    /* Matches clean modern visual standards */
 }
 
 .portfolio-section .responsive-gallery-img {
@@ -1405,19 +1271,16 @@ body.viewport-scrolled .sticky-header {
     transition: transform var(--transition-smooth);
 }
 
-/* Zooms background image on card item interactions */
 .portfolio-section .gallery-card-item:hover .responsive-gallery-img {
     transform: scale(1.05);
 }
 
-/* Slide Up Interactive Metadata Overlay (Hidden default state) */
 .portfolio-section .gallery-card-item .gallery-card-info {
     opacity: 0;
     position: absolute;
     left: 20px;
     right: 20px;
     bottom: -20px;
-    /* Prepares it to slide upward seamlessly */
     z-index: 3;
     transition: all var(--transition-smooth);
     background: color-mix(in srgb, var(--background-color), transparent 10%);
@@ -1446,7 +1309,6 @@ body.viewport-scrolled .sticky-header {
     padding-right: 65px;
 }
 
-/* Action Trigger Inline Layout Anchor Handles Wrapper */
 .portfolio-section .gallery-interaction-links {
     position: absolute;
     right: 15px;
@@ -1473,11 +1335,9 @@ body.viewport-scrolled .sticky-header {
     color: var(--accent-color);
 }
 
-/* Reveal information card layer cleanly on hover triggers */
 .portfolio-section .gallery-card-item:hover .gallery-card-info {
     opacity: 1;
     bottom: 20px;
-    /* Slides seamlessly up into position */
 }
 
 
@@ -1489,15 +1349,12 @@ body.viewport-scrolled .sticky-header {
     padding: 0 var(--grid-gutter);
 }
 
-/* Two-Column responsive balancing grid replacing Bootstrap row utilities */
 .pricing-section .pricing-menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px var(--grid-gutter);
-    /* Sets precise vertical row separation widths */
 }
 
-/* Individual Flexbox Menu Rows aligning Name Left and Price Right */
 .pricing-section .pricing-menu-card {
     border-bottom: 1px dashed color-mix(in srgb, var(--default-color), transparent 60%);
     width: 100%;
@@ -1524,7 +1381,6 @@ body.viewport-scrolled .sticky-header {
     color: var(--accent-color);
 }
 
-/* Snaps menus down into an organized single row on mobile screens */
 @media (max-width: 768px) {
     .pricing-section .pricing-menu-grid {
         grid-template-columns: 1fr;
@@ -1540,7 +1396,6 @@ body.viewport-scrolled .sticky-header {
     padding: 0 var(--grid-gutter);
 }
 
-/* Asymmetric Grid Architecture replacing Bootstrap's col-lg-4 and col-lg-8 elements */
 .faq-section .faq-split-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -1549,7 +1404,6 @@ body.viewport-scrolled .sticky-header {
     align-items: start;
 }
 
-/* Left block heading components styling */
 .faq-section .faq-intro-content h3 {
     font-family: var(--heading-font);
     color: var(--heading-color);
@@ -1570,14 +1424,12 @@ body.viewport-scrolled .sticky-header {
     margin-top: 15px;
 }
 
-/* Right block accordion list boxes container layout */
 .faq-section .faq-accordion-wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-/* Individual Accordion Card Panel Blocks */
 .faq-section .faq-accordion-item {
     background-color: var(--surface-color);
     position: relative;
@@ -1593,7 +1445,6 @@ body.viewport-scrolled .sticky-header {
     margin-bottom: 0;
 }
 
-/* Clicking Header Layout mapping containing text items and indicator chevron toggle */
 .faq-section .faq-item-header {
     display: flex;
     align-items: center;
@@ -1607,7 +1458,6 @@ body.viewport-scrolled .sticky-header {
     font-size: 18px;
     line-height: 24px;
     margin: 0 40px 0 0;
-    /* Clear right-hand padding constraint to preserve toggle visibility bounds */
     transition: color var(--transition-smooth);
     display: flex;
     align-items: flex-start;
@@ -1624,7 +1474,6 @@ body.viewport-scrolled .sticky-header {
     color: var(--accent-color);
 }
 
-/* Pure CSS high-performance expandable grid transition channel pipeline */
 .faq-section .faq-accordion-item .faq-item-body {
     display: grid;
     grid-template-rows: 0fr;
@@ -1641,7 +1490,6 @@ body.viewport-scrolled .sticky-header {
     font-size: 15px;
 }
 
-/* Absolute Floating Action Arrow Toggle Controls */
 .faq-section .faq-toggle-icon {
     position: absolute;
     top: 24px;
@@ -1661,7 +1509,6 @@ body.viewport-scrolled .sticky-header {
     color: var(--accent-color);
 }
 
-/* Unlocks fractional track height dynamically to display answer strings cleanly */
 .faq-section .faq-active .faq-item-body {
     grid-template-rows: 1fr;
     visibility: visible;
@@ -1669,13 +1516,11 @@ body.viewport-scrolled .sticky-header {
     padding-top: 15px;
 }
 
-/* Smoothly rotates fontawesome chevron element 90 degrees downward */
 .faq-section .faq-active .faq-toggle-icon {
     transform: rotate(90deg);
     color: var(--accent-color);
 }
 
-/* Snaps structural layout rows into 1 single column on tablet viewports */
 @media (max-width: 991px) {
     .faq-section .faq-split-grid {
         grid-template-columns: 1fr;
@@ -1683,11 +1528,6 @@ body.viewport-scrolled .sticky-header {
     }
 }
 
-
-
-/* ========================================================================= */
-/* 25. FIXED TESTIMONIALS SLIDER INFRASTRUCTURE                              */
-/* ========================================================================= */
 
 .testimonials-slider-section {
     padding: 80px 0;
@@ -1713,7 +1553,6 @@ body.viewport-scrolled .sticky-header {
     z-index: 1;
 }
 
-/* THE FIX: Main Viewport Window */
 .testimonials-slider-section .testimonials-swiper-instance {
     position: relative;
     overflow: hidden;
@@ -1724,7 +1563,6 @@ body.viewport-scrolled .sticky-header {
     z-index: 3;
 }
 
-/* THE CRITICAL FIX: Forces cards into an unbroken horizontal row line */
 .testimonials-slider-section .swiper-wrapper {
     display: flex !important;
     flex-direction: row !important;
@@ -1733,19 +1571,15 @@ body.viewport-scrolled .sticky-header {
     width: 100%;
     height: auto;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Drives smooth horizontal slide */
 }
 
-/* Individual slide dimensions layout bounds */
 .testimonials-slider-section .swiper-slide {
     flex: 0 0 100% !important;
-    /* Forces each individual card to span exactly full container width */
     width: 100% !important;
     max-width: 100%;
     box-sizing: border-box;
 }
 
-/* Presentation Interior Elements Formatting Mapping */
 .testimonials-slider-section .testimonial-card-box {
     text-align: center;
     padding: 30px;
@@ -1785,7 +1619,6 @@ body.viewport-scrolled .sticky-header {
     margin: 15px auto;
 }
 
-/* Dots Pagination Indicators Placement */
 .testimonials-slider-section .testimonial-bullets-wrap {
     margin-top: 25px;
     display: flex;
@@ -1807,14 +1640,11 @@ body.viewport-scrolled .sticky-header {
     transform: scale(1.2);
 }
 
-/* Constrains text presentation limits cleanly across roomy desktop views */
 @media (min-width: 992px) {
     .testimonials-slider-section .client-review-text {
         width: 80%;
     }
 }
-
-
 
 .contact-section .contact-container {
     width: 100%;
@@ -1823,7 +1653,6 @@ body.viewport-scrolled .sticky-header {
     padding: 0 var(--grid-gutter);
 }
 
-/* Contact Upper Info Plate Panel */
 .contact-section .contact-info-wrap-panel {
     background-color: var(--surface-color);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
@@ -1832,7 +1661,6 @@ body.viewport-scrolled .sticky-header {
     border-radius: 8px;
 }
 
-/* Framework-Free Side-by-Side Metadata Cards Grid Matrix */
 .contact-section .contact-info-cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1844,7 +1672,6 @@ body.viewport-scrolled .sticky-header {
     align-items: center;
 }
 
-/* Circular Icon Border Vectors */
 .contact-section .contact-card-icon-box i {
     font-size: 20px;
     color: var(--accent-color);
@@ -1874,14 +1701,12 @@ body.viewport-scrolled .sticky-header {
     font-size: 14px;
 }
 
-/* Inverts icon colors on hover actions */
 .contact-section .contact-info-card-item:hover .contact-card-icon-box i {
     background: var(--accent-color);
     color: var(--contrast-color);
     transform: scale(1.05);
 }
 
-/* Main Interactive Communications Form Plate */
 .contact-section .clean-interactive-form {
     background-color: var(--surface-color);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
@@ -1889,14 +1714,12 @@ body.viewport-scrolled .sticky-header {
     border-radius: 8px;
 }
 
-/* Vertical Form Internal Input Structural Grid Alignment Layer */
 .contact-section .form-inputs-layout-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
 }
 
-/* Side-by-Side Flex Box Input Row Wrapper (Name & Email fields) */
 .contact-section .form-field-group-row {
     display: flex;
     gap: 20px;
@@ -1911,7 +1734,6 @@ body.viewport-scrolled .sticky-header {
     width: 100%;
 }
 
-/* Custom Core Form Fields Styling */
 .contact-section .custom-form-field {
     width: 100%;
     font-size: 14px;
@@ -1936,7 +1758,6 @@ body.viewport-scrolled .sticky-header {
     resize: vertical;
 }
 
-/* Form Action Submission Controls Footer area */
 .contact-section .form-submission-footer-box {
     text-align: center;
     width: 100%;
@@ -1958,11 +1779,9 @@ body.viewport-scrolled .sticky-header {
     transform: translateY(-2px);
 }
 
-/* Contact Page Responsive Breakpoint Constraints */
 @media (max-width: 991px) {
     .contact-section .contact-info-cards-grid {
         grid-template-columns: 1fr;
-        /* Stacks information panel cards vertically on tablets */
         gap: 20px;
     }
 }
@@ -1970,7 +1789,6 @@ body.viewport-scrolled .sticky-header {
 @media (max-width: 768px) {
     .contact-section .form-field-group-row {
         flex-direction: column;
-        /* Stacks Name and Email fields vertically on mobiles */
         gap: 20px;
     }
 }
@@ -2003,7 +1821,6 @@ body.viewport-scrolled .sticky-header {
     height: auto;
 }
 
-/* Custom Swiper Next/Prev Navigation Pointers overrides */
 .portfolio-details-section .swiper-button-prev,
 .portfolio-details-section .swiper-button-next {
     width: 48px;
@@ -2034,11 +1851,9 @@ body.viewport-scrolled .sticky-header {
     .portfolio-details-section .swiper-button-prev,
     .portfolio-details-section .swiper-button-next {
         display: none;
-        /* Suppresses arrow visibility maps on micro phone layouts */
     }
 }
 
-/* Slider Pagination Setup */
 .portfolio-details-section .swiper-pagination {
     margin-top: 20px;
     position: relative;
@@ -2055,7 +1870,6 @@ body.viewport-scrolled .sticky-header {
     background-color: var(--accent-color);
 }
 
-/* Sidebar Project Specifications Panel Info box */
 .portfolio-details-section .portfolio-info-box h3 {
     font-size: 22px;
     font-weight: 700;
@@ -2096,7 +1910,6 @@ body.viewport-scrolled .sticky-header {
     font-size: 14px;
 }
 
-/* Visit Live Website Button Component */
 .portfolio-details-section .btn-visit {
     display: inline-block;
     text-align: center;
@@ -2113,7 +1926,6 @@ body.viewport-scrolled .sticky-header {
     transform: translateY(-2px);
 }
 
-/* Left/Main Description Column Text blocks */
 .portfolio-details-section .portfolio-description-box h2 {
     font-size: 26px;
     font-weight: 700;
@@ -2129,7 +1941,6 @@ body.viewport-scrolled .sticky-header {
     margin-bottom: 1.5rem;
 }
 
-/* Sidebar Highlighted Inlined Testimonial Card blocks */
 .portfolio-details-section .details-testimonial-card {
     padding: 30px;
     position: relative;
@@ -2192,10 +2003,6 @@ body.viewport-scrolled .sticky-header {
 }
 
 
-/* ========================================================================= */
-/* 28. SERVICE DETAILS SUB-PAGE INFRASTRUCTURE                               */
-/* ========================================================================= */
-
 .service-details-section {
     padding: 60px 0;
     width: 100%;
@@ -2208,7 +2015,6 @@ body.viewport-scrolled .sticky-header {
     padding: 0 var(--grid-gutter);
 }
 
-/* Sidebar Navigation Component for Services Pages */
 .service-details-section .services-list-sidebar {
     background-color: var(--surface-color);
     padding: 10px 30px;
@@ -2217,7 +2023,6 @@ body.viewport-scrolled .sticky-header {
     border-radius: 6px;
 }
 
-/* Individual Vertical Anchors inside the sidebar list */
 .service-details-section .services-list-sidebar a {
     display: block;
     line-height: 1;
@@ -2269,7 +2074,6 @@ body.viewport-scrolled .sticky-header {
     margin-bottom: 15px;
 }
 
-/* Checklist Layout inside Service Specification Sheets */
 .service-details-section .details-features-list {
     list-style: none;
     padding: 0;
@@ -2289,10 +2093,6 @@ body.viewport-scrolled .sticky-header {
     color: var(--accent-color);
 }
 
-/* ========================================================================= */
-/* 29. STARTER / UTILITY SECTION (CONVERTED TO A UTILITY CTA DESIGN)        */
-/* ========================================================================= */
-
 .starter-section {
     padding: 80px 0;
     background-color: var(--surface-color);
@@ -2301,11 +2101,9 @@ body.viewport-scrolled .sticky-header {
     width: 100%;
 }
 
-/* Centered content block layout */
 .starter-section .starter-container {
     width: 100%;
     max-width: 800px;
-    /* Kept focused to stand out elegantly */
     margin: 0 auto;
     padding: 0 var(--grid-gutter);
     text-align: center;
@@ -2327,7 +2125,6 @@ body.viewport-scrolled .sticky-header {
     margin-bottom: 30px;
 }
 
-/* Interactive Utility Button Component */
 .starter-section .starter-action-btn {
     display: inline-block;
     padding: 14px 36px;
