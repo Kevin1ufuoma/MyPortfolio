@@ -1,0 +1,2351 @@
+
+/* Typography Token Mapping Pipeline */
+:root {
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Raleway", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+
+    /* Layout Spacing Speed Tokens (Bootstrap Equivalent Metrics) */
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --grid-gutter: 24px;
+}
+
+/* Global Dynamic Color States */
+:root {
+    --background-color: #ffffff;
+    --default-color: #4e4e4e;
+    --heading-color: #0a090f;
+    --accent-color: #0078ff;
+    --surface-color: #ffffff;
+    --contrast-color: #ffffff;
+}
+
+/* Structural Navigation Component Color Array */
+:root {
+    --nav-color: #ffffff;
+    --nav-hover-color: #0e0baa;
+    --nav-mobile-background-color: #ffffff;
+    --nav-dropdown-background-color: #ffffff;
+    --nav-dropdown-color: #212529;
+    --nav-dropdown-hover-color: #0078ff;
+}
+
+/* Contextual Section Preset Color Themes (Replaces Bootstrap theme hooks) */
+.light-background {
+    --background-color: #f9f9f9;
+    --surface-color: #ffffff;
+}
+
+.dark-theme-bg {
+    /* Matched directly to your converted dark image layout container class */
+    --background-color: #060606;
+    --default-color: #ffffff;
+    --heading-color: #ffffff;
+    --surface-color: #252525;
+    --contrast-color: #ffffff;
+}
+
+.accent-theme-bg {
+    /* Matched directly to your converted stats/testimonials wrapper class */
+    --background-color: #0078ff;
+    --default-color: #ffffff;
+    --heading-color: #ffffff;
+    --accent-color: #ffffff;
+    --surface-color: #3393ff;
+    --contrast-color: #ffffff;
+}
+
+
+/* Enforce strict padding/margin bounds on all viewport canvas dimensions */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Viewport Alignment Safety Parameters */
+html {
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Global Body Container Safeguard Layer (Locks horizontal drawer spillage out) */
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: var(--default-font);
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--background-color);
+    color: var(--default-color);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+/* Typography Scale Balancing Rules (Bootstrap Hierarchy Equivalents) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Link State Reset Components */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color var(--transition-smooth);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Responsive Asset Constraints */
+img,
+svg {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Native Control Cleaners */
+button,
+input,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    outline: none;
+}
+
+
+
+
+/* Anchor Link Active Interactivity Configuration */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+a:hover {
+    /* Preserved your custom color-mix rule for a framework-free hover state */
+    color: color-mix(in srgb, var(--accent-color), transparent 25%);
+    text-decoration: none;
+}
+
+
+/* Common parameters for validation feedback windows */
+.form-status-msg {
+    display: none;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+    border-radius: 6px;
+    /* Added clean card borders to match standard layouts */
+}
+
+/* Diagnostic Error Notification Window Style */
+.clean-interactive-form .form-error {
+    background: #df1529;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Live Operational Success Transmission Badge Style */
+.clean-interactive-form .form-sent {
+    color: #ffffff;
+    background: #059652;
+    text-align: center;
+}
+
+/* Form submission spinner container box */
+.clean-interactive-form .form-loading {
+    background: var(--surface-color);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+/* Pure CSS Asynchronous Loading Pointer Vector */
+.clean-interactive-form .form-loading::before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid var(--accent-color);
+    border-top-color: var(--surface-color);
+    animation: clean-form-loading-spinner 1s linear infinite;
+}
+
+/* Operational Matrix Keyframe Timeline Engine */
+@keyframes clean-form-loading-spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+.sticky-header {
+    --background-color: #000000;
+    --default-color: #ffffff;
+    --heading-color: #ffffff;
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 20px 0;
+    position: fixed;
+    /* Ensures header is locked down at screen top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.5s var(--transition-smooth);
+    z-index: 997;
+}
+
+/* Framework-Free Header Container matching standard Bootstrap width limits */
+.header-container {
+    width: 100%;
+    max-width: 1320px;
+    /* Bootstrap xl/xxl fluid container equivalent */
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Brand Logo Vector Branding Wrapper */
+.logo-link {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.logo-link img {
+    max-height: 50px;
+    margin-right: 8px;
+    border-radius: 40%;
+}
+
+.logo-link .sitename {
+    font-size: 30px;
+    margin: 0;
+    font-weight: 700;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+}
+
+/* Triggered dynamically via upcoming jQuery scroll watcher */
+body.viewport-scrolled .sticky-header {
+    box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (min-width: 1200px) {
+
+    /* Hides the mobile menu icon trigger entirely on desktop screens */
+    .mobile-nav-toggle {
+        display: none;
+    }
+
+    .navigation-menu {
+        padding: 0;
+    }
+
+    .navigation-menu .nav-list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    .navigation-menu .nav-list>li {
+        position: relative;
+        white-space: nowrap;
+        padding: 15px 14px;
+    }
+
+    .navigation-menu .nav-list>li:last-child {
+        padding-right: 0;
+    }
+
+    /* Primary Anchor Links Interaction Configuration */
+    .navigation-menu .nav-link {
+        color: var(--nav-color);
+        font-size: 15px;
+        padding: 0 2px;
+        font-family: var(--nav-font);
+        font-weight: 400;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: var(--transition-smooth);
+        position: relative;
+    }
+
+    /* Dropdown indicator icons alignment setup */
+    .navigation-menu .nav-link .toggle-dropdown-icon {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        transition: var(--transition-smooth);
+    }
+
+    /* Premium Micro-Interactive Animated Slide Underline Link Accent */
+    .navigation-menu .nav-list>li>.nav-link::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -6px;
+        left: 0;
+        background-color: var(--nav-hover-color);
+        visibility: hidden;
+        transition: all var(--transition-smooth);
+    }
+
+    .navigation-menu .nav-link:hover::before,
+    .navigation-menu .nav-list>li:hover>.nav-link::before,
+    .navigation-menu .nav-link.active::before {
+        visibility: visible;
+        width: 100%;
+    }
+
+    .navigation-menu .nav-list>li:hover>.nav-link,
+    .navigation-menu .nav-link.active {
+        color: var(--nav-hover-color);
+    }
+
+    
+    /* Primary Level Dropdown Wrapper */
+    .navigation-menu .has-dropdown .dropdown-menu {
+        margin: 0;
+        padding: 10px 0;
+        background: var(--nav-dropdown-background-color);
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        left: 14px;
+        top: 130%;
+        opacity: 0;
+        transition: var(--transition-smooth);
+        border-radius: 4px;
+        z-index: 99;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+        list-style: none;
+    }
+
+    .navigation-menu .has-dropdown .dropdown-menu li {
+        min-width: 200px;
+        position: relative;
+    }
+
+    .navigation-menu .has-dropdown .dropdown-menu a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        font-size: 15px;
+        text-transform: none;
+        color: var(--nav-dropdown-color);
+        font-family: var(--nav-font);
+        transition: var(--transition-smooth);
+    }
+
+    .navigation-menu .has-dropdown .dropdown-menu a .toggle-dropdown-icon {
+        font-size: 12px;
+    }
+
+    .navigation-menu .has-dropdown .dropdown-menu a:hover,
+    .navigation-menu .has-dropdown .dropdown-menu li:hover>a {
+        color: var(--nav-dropdown-hover-color);
+    }
+
+    /* Reveal Dropdown cleanly on list node hover triggers */
+    .navigation-menu .has-dropdown:hover>.dropdown-menu {
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+    }
+
+    /* Deep Level Subnested Dropdown Alignment Mapping */
+    .navigation-menu .deep-dropdown .nested-menu {
+        top: 0;
+        left: -90%;
+        visibility: hidden;
+    }
+
+    /* Flips deep dropdown menu safely over to avoid clipping view bounds */
+    .navigation-menu .deep-dropdown:hover>.nested-menu {
+        opacity: 1;
+        top: 0;
+        left: -100%;
+        visibility: visible;
+    }
+}
+
+
+
+
+@media (max-width: 1199px) {
+
+    /* Fixes the invisible mobile nav toggle bug */
+    .mobile-nav-toggle {
+        display: inline-flex !important;
+        /* Forces it to show on small screens */
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+        color: #ffffff !important;
+        /* Changes icon to white so it stands out against a dark header background */
+        font-size: 28px;
+        cursor: pointer;
+        position: relative;
+        z-index: 10001;
+    }
+
+    /* Text backup fallback if font CDNs are blocked or slow */
+    .mobile-nav-toggle::after {
+        content: " ☰";
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+    }
+
+    /* Smoothly suppresses the emoji symbol once FontAwesome completes loading */
+    .mobile-nav-toggle.fa-bars::after {
+        display: none;
+    }
+
+
+    .navigation-menu {
+        padding: 0;
+        z-index: 9997;
+    }
+
+    /* The Mobile Menu Box Dropdown Layer (Hidden by default) */
+    .navigation-menu .nav-list {
+        display: none;
+        list-style: none;
+        position: absolute;
+        inset: 60px 20px 20px 20px;
+        padding: 10px 0;
+        margin: 0;
+        border-radius: 6px;
+        background-color: var(--nav-mobile-background-color);
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        /* Replaced template rule for structural elevation drop depth */
+        overflow-y: auto;
+        transition: var(--transition-smooth);
+        z-index: 9998;
+    }
+
+    /* Mobile Dropdown Nav Links Styling */
+    .navigation-menu .nav-link {
+        color: var(--nav-dropdown-color);
+        padding: 10px 20px;
+        font-family: var(--nav-font);
+        font-size: 17px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: var(--transition-smooth);
+    }
+
+    /* Mobile Dropdown Indicator Circle Badge Triggers */
+    .navigation-menu .nav-link .toggle-dropdown-icon {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: var(--transition-smooth);
+        background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    }
+
+    .navigation-menu .nav-link .toggle-dropdown-icon:hover {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+    }
+
+    /* Hover and Active Link States across Mobile Canvas Panels */
+    .navigation-menu .nav-link:hover,
+    .navigation-menu .nav-link.active {
+        color: var(--nav-dropdown-hover-color);
+    }
+
+    /* Dynamic Active state icon rotation parameters managed via jQuery triggers */
+    .navigation-menu .nav-link.active .toggle-dropdown-icon {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+        transform: rotate(180deg);
+    }
+
+    /* Submenu lists stacked flatly under their parents on small screens */
+    .navigation-menu .has-dropdown .dropdown-menu {
+        position: static;
+        display: none;
+        /* Controlled programmatically via smooth jQuery slideToggle animations */
+        z-index: 99;
+        padding: 10px 0;
+        margin: 10px 20px;
+        background-color: var(--nav-dropdown-background-color);
+        box-shadow: none;
+        list-style: none;
+        transition: all 0.5s ease-in-out;
+    }
+
+    /* Deep nested items gain additional dark tint backplate spacing */
+    .navigation-menu .deep-dropdown .nested-menu {
+        background-color: rgba(33, 37, 41, 0.1);
+    }
+
+    /* Active Open sub-menus display block parameters */
+    .navigation-menu .has-dropdown>.dropdown-menu.dropdown-active {
+        display: block;
+        background-color: rgba(33, 37, 41, 0.03);
+    }
+
+    
+    /* Prevents background page scrolling when mobile menu drawer panel window is open */
+    body.mobile-nav-active {
+        overflow: hidden;
+    }
+
+    /* Relocates close button floating fixed to upper right viewpoint frame edge */
+    body.mobile-nav-active .mobile-nav-toggle {
+        color: #ffffff;
+        position: fixed;
+        font-size: 32px;
+        top: 15px;
+        right: 15px;
+        margin-right: 0;
+        z-index: 9999;
+    }
+
+    /* Blurs out base page content with frosted backdrop shadow sheet parameter */
+    body.mobile-nav-active .navigation-menu {
+        position: fixed;
+        overflow: hidden;
+        inset: 0;
+        background: rgba(33, 37, 41, 0.8);
+        backdrop-filter: blur(4px);
+        /* Premium framework-free addition matching modern glass rules */
+        -webkit-backdrop-filter: blur(4px);
+        transition: var(--transition-smooth);
+    }
+
+    /* Forces hidden list grid array box back into immediate display layer view */
+    body.mobile-nav-active .navigation-menu .nav-list {
+        display: block;
+    }
+}
+
+
+
+
+.main-footer {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-size: 14px;
+    padding: 40px 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Framework-Free Footer Flex Alignment Layout */
+.footer-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.main-footer .footer-copyright-box p {
+    margin-bottom: 0;
+}
+
+/* Horizontal Row for Social Platform Anchors */
+.main-footer .footer-social-links-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Clean, Circular Social Media Media Indicator Badges */
+.main-footer .footer-social-links-row a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* Preserved your native srgb transparency blend lines */
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 30%);
+    font-size: 16px;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    margin: 0 5px;
+    transition: all var(--transition-smooth);
+}
+
+/* Social link interactive invert lift */
+.main-footer .footer-social-links-row a:hover {
+    color: var(--default-color);
+    border-color: var(--default-color);
+    transform: translateY(-2px);
+    /* Micro-elevation hover effect added */
+}
+
+/* Credits & Licensing Section */
+.main-footer .footer-credits-box {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.main-footer .footer-credits-box a {
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    transition: color var(--transition-smooth);
+}
+
+.main-footer .footer-credits-box a:hover {
+    color: var(--accent-color);
+}
+
+
+
+.scroll-to-top-btn {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: -15px;
+    z-index: 99999;
+    background-color: var(--accent-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50px;
+    display: inline-flex;
+    /* Added framework-free centering matrix mechanics */
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s var(--transition-smooth);
+    text-decoration: none;
+}
+
+/* Icon layout adjustments inside the container */
+.scroll-to-top-btn i {
+    font-size: 24px;
+    color: var(--contrast-color);
+    line-height: 1;
+    /* Fixed 0-height baseline glitch for standard vector fonts */
+}
+
+/* Scroll action hovering backdrop shift */
+.scroll-to-top-btn:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+    color: var(--contrast-color);
+    transform: translateY(-3px);
+    /* Added micro-lift animation effect */
+}
+
+/* Active visible state managed dynamically via upcoming jQuery scroll listener */
+.scroll-to-top-btn.active {
+    visibility: visible;
+    opacity: 1;
+    bottom: 15px;
+}
+
+
+/* Disables sequential entrance delays on smaller mobile device glass surfaces */
+@media screen and (max-width: 768px) {
+    [data-delay] {
+        transition-delay: 0s !important;
+        animation-delay: 0s !important;
+    }
+}
+
+
+.page-title-banner {
+    /* Preserved your custom layout blend percentage ratio */
+    --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 25px 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Framework-Free Fluid Flex Layout Row Container */
+.page-title-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    /* Lined up nicely: Title Left, Breadcrumbs Right */
+}
+
+.page-title-banner .main-title-text {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: var(--heading-font);
+    margin-bottom: 0;
+    /* Clear grid line block collision */
+}
+
+/* Breadcrumb navigation list wrapper */
+.page-title-banner .breadcrumbs-nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--nav-font);
+}
+
+/* Spacing layout padding adjustment between adjacent list entries */
+.page-title-banner .breadcrumbs-nav-list li+li {
+    padding-left: 10px;
+}
+
+/* Automatic pseudo-element divider generation matrix */
+.page-title-banner .breadcrumbs-nav-list li+li::before {
+    content: "/";
+    display: inline-block;
+    padding-right: 10px;
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+/* Adaptive mobile adjustment so things stack gracefully when screen space shrinks */
+@media (max-width: 768px) {
+    .page-title-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+
+
+/* Replaces base tag rules with your clean semantic section layout classes */
+.hero-section,
+.about-section,
+.resume-section,
+.services-section,
+.stats-counter-section,
+.portfolio-section,
+.pricing-section,
+.faq-section,
+.testimonials-slider-section,
+.contact-section {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    /* Leaves exact breathing room above headers when navigating via anchor menus */
+    scroll-margin-top: 92px;
+    overflow: clip;
+    /* Modern safe clipping alternative to hidden overflows */
+    width: 100%;
+}
+
+/* Responsive adjustment for sticky header heights on smaller tablet device canvases */
+@media (max-width: 1199px) {
+
+    .hero-section,
+    .about-section,
+    .resume-section,
+    .services-section,
+    .stats-counter-section,
+    .portfolio-section,
+    .pricing-section,
+    .faq-section,
+    .testimonials-slider-section,
+    .contact-section {
+        scroll-margin-top: 76px;
+    }
+}
+
+
+.resume-section-title-wrap,
+.services-section-title-wrap,
+.portfolio-section-title-wrap,
+.pricing-section-title-wrap,
+.contact-section-title-wrap {
+    text-align: center;
+    padding-bottom: 60px;
+    position: relative;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding-left: var(--grid-gutter);
+    padding-right: var(--grid-gutter);
+}
+
+/* Section Main Heading Elements */
+.resume-section-title-wrap h2,
+.services-section-title-wrap h2,
+.portfolio-section-title-wrap h2,
+.pricing-section-title-wrap h2,
+.contact-section-title-wrap h2 {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+/* Premium Visual Anchor: Automatic decorative colored banner accent bar generator */
+.resume-section-title-wrap h2::after,
+.services-section-title-wrap h2::after,
+.portfolio-section-title-wrap h2::after,
+.pricing-section-title-wrap h2::after,
+.contact-section-title-wrap h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* Section Subheading Paragraph Content */
+.resume-section-title-wrap p,
+.services-section-title-wrap p,
+.portfolio-section-title-wrap p,
+.pricing-section-title-wrap p,
+.contact-section-title-wrap p {
+    font-family: var(--default-font);
+    color: var(--default-color);
+    margin-bottom: 0;
+}
+
+
+
+.hero-section {
+    width: 100%;
+    min-height: calc(100vh - 92px);
+    position: relative;
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background Wallpaper Asset Constraints */
+.hero-section .hero-bg-img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Ambient Visual Backdrop Dark Overlay Mesh Layer */
+.hero-section::before {
+    content: "";
+    background: color-mix(in srgb, var(--background-color), transparent 30%);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+/* Foreground Centered Content Wrapper Block */
+.hero-section .hero-content-wrapper {
+    position: relative;
+    text-align: center;
+    z-index: 3;
+    padding: 0 var(--grid-gutter);
+}
+
+.hero-section .hero-title {
+    margin: 0;
+    font-size: 64px;
+    font-weight: 700;
+    font-family: var(--heading-font);
+    color: var(--nav-hover-color);
+}
+
+.hero-section .hero-subtitle {
+    margin: 5px 0 0 0;
+    font-size: 36px;
+    font-weight: 600;
+    font-family: var(--default-font);
+}
+
+.hero-section .typed-text-target {
+    letter-spacing: 1px;
+}
+
+/* Responsive Font Scaling Breakpoints matching standard Bootstrap sizes */
+@media (max-width: 768px) {
+    .hero-section .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-section .hero-subtitle {
+        font-size: 20px;
+    }
+}
+
+
+.about-section .about-container {
+    background-color: var(--surface-color);
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+/* Replaces Bootstrap Row/Col column structures with native modern CSS Grid */
+.about-section .about-split-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Generates two equal horizontal grid halves */
+    gap: 40px;
+    align-items: start;
+}
+
+/* Sub-Row arrangement inside Profile block containing metadata details */
+.about-section .profile-details-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.about-section .profile-image-container {
+    flex: 0 0 40%;
+    /* Image column column span block ratio */
+}
+
+.about-section .responsive-profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.about-section .profile-meta-info {
+    flex: 0 0 60%;
+    /* Details text block width span ratio */
+}
+
+.about-section .profile-meta-info p {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+/* Skill Progress Bars Header Element styling */
+.about-section .skills-heading {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--heading-font);
+    margin: 30px 0 15px 0;
+}
+
+/* Custom Skill Progress Item Blocks Container */
+.about-section .skill-progress-item {
+    height: auto;
+    display: block;
+    margin-top: 15px;
+}
+
+.about-section .skill-label-bar {
+    color: var(--default-color);
+    padding: 0;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 600;
+    font-family: var(--heading-font);
+}
+
+.about-section .skill-percent-value {
+    float: right;
+    font-style: normal;
+}
+
+/* Outer Progress Indicator track channel vector layout */
+.about-section .custom-progress-track {
+    background: color-mix(in srgb, var(--default-color), transparent 90%);
+    height: 10px;
+    width: 100%;
+}
+
+/* Dynamic Inner fill gauge extraction logic pulling variables directly from HTML markup tags */
+.about-section .custom-progress-fill {
+    width: var(--progress-width, 1px);
+    height: 10px;
+    transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--accent-color);
+}
+
+/* Right Column Biography Layout Panel blocks */
+.about-section .biography-heading {
+    font-size: 28px;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-family: var(--heading-font);
+}
+
+/* Visual underline separator rule added underneath the section title */
+.about-section .biography-heading::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 64px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    bottom: 0;
+}
+
+.about-section .about-me-text-wrap p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+/* Media optimization snapping grid into single columns on tablets/mobiles */
+@media (max-width: 991px) {
+    .about-section .about-split-grid {
+        grid-template-columns: 1fr;
+        /* Drops grid sections down vertically */
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-section .profile-details-wrapper {
+        flex-direction: column;
+        /* Stacks avatar image completely on top of details on tiny screens */
+        gap: 20px;
+    }
+}
+
+
+
+.resume-section .resume-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+}
+
+/* Two-Column Side-by-Side Content Grid replacing Bootstrap row blocks */
+.resume-section .resume-timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    align-items: start;
+}
+
+.resume-section .timeline-group-title {
+    color: var(--heading-color);
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: var(--heading-font);
+}
+
+/* Vertical Timeline Connector Tracks */
+.resume-section .timeline-card-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid var(--accent-color);
+    position: relative;
+}
+
+.resume-section .timeline-card-item h4 {
+    line-height: 1.2;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: var(--heading-font);
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin-bottom: 10px;
+}
+
+/* Date/Duration Indicator Badges */
+.resume-section .timeline-date-badge {
+    font-size: 16px;
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background-color: color-mix(in srgb, var(--default-color), transparent 93%);
+    border-radius: 4px;
+}
+
+/* Lists and Contact Elements configuration */
+.resume-section .timeline-contact-list,
+.resume-section .timeline-details-list {
+    padding-left: 20px;
+    list-style-type: square;
+    /* Clean semantic marker adjustment */
+}
+
+.resume-section .timeline-card-item li {
+    padding-bottom: 10px;
+    line-height: 1.5;
+}
+
+.resume-section .timeline-card-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Interactive Node Node Matrix: Generates timeline circle vectors automatically */
+.resume-section .timeline-card-item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background: var(--background-color);
+    border: 2px solid var(--accent-color);
+    z-index: 2;
+}
+
+/* Snaps timeline column panels down stacked on small screen boundaries */
+@media (max-width: 991px) {
+    .resume-section .resume-timeline-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+ 
+
+.services-section .services-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+}
+
+/* Auto-fitting, framework-free modular product deck grid matrix */
+.services-section .services-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Standalone Service Card Panels */
+.services-section .service-card-item {
+    background-color: var(--surface-color);
+    box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.08);
+    padding: 60px 30px;
+    transition: all var(--transition-smooth);
+    border-radius: 18px;
+    border-bottom: 5px solid var(--surface-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Centered Circular Icon Containers */
+.services-section .service-icon-box {
+    color: var(--contrast-color);
+    background: var(--accent-color);
+    margin: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    transition: all var(--transition-smooth);
+}
+
+.services-section .service-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.services-section .service-card-item h3 {
+    font-weight: 700;
+    margin: 10px 0 15px 0;
+    font-size: 22px;
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+    transition: all var(--transition-smooth);
+}
+
+.services-section .service-card-item p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Premium Hover Transitions */
+.services-section .service-card-item:hover {
+    transform: translateY(-10px);
+    border-bottom-color: var(--accent-color);
+}
+
+.services-section .service-card-item:hover h3 {
+    color: var(--accent-color);
+}
+
+/* Responsive adjustment for tiny screens so grid layout panels stay balanced */
+@media (max-width: 576px) {
+    .services-section .services-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.stats-counter-section {
+    position: relative;
+    padding: 120px 0;
+    width: 100%;
+}
+
+/* Background Presentation Image Constraints */
+.stats-counter-section .stats-bg-image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Translucent Structural Color Blend Layer Over Background */
+.stats-counter-section::before {
+    content: "";
+    background: color-mix(in srgb, var(--background-color), transparent 40%);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.stats-counter-section .stats-container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+}
+
+/* Framework-Free Balanced Columns Grid Matrix */
+.stats-counter-section .stats-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.stats-counter-section .metric-card-box {
+    padding: 30px;
+    width: 100%;
+}
+
+/* Big Numerical Counter Ticker Typography */
+.stats-counter-section .ticker-number-display {
+    font-size: 48px;
+    display: block;
+    color: var(--default-color);
+    font-weight: 700;
+    font-family: var(--default-font);
+}
+
+/* Ticker Metadata Label Text */
+.stats-counter-section .metric-label-text {
+    padding: 0;
+    margin: 0;
+    font-family: var(--heading-font);
+    font-size: 16px;
+    font-weight: 700;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+/* Responsive breakdowns for metric columns */
+@media (max-width: 991px) {
+    .stats-counter-section .stats-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 575px) {
+    .stats-counter-section .stats-metrics-grid {
+        grid-template-columns: 1fr;
+        /* Stacks completely flat on mobiles */
+    }
+}
+
+
+.portfolio-section .portfolio-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+}
+
+/* Gallery Category Navigation Menu Tab Row */
+.portfolio-section .gallery-filter-menu {
+    padding: 0;
+    margin: 0 auto 30px auto;
+    list-style: none;
+    text-align: center;
+}
+
+.portfolio-section .gallery-filter-menu li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 18px;
+    /* Added internal button balance pads */
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 5px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: var(--nav-font);
+    transition: all var(--transition-smooth);
+}
+
+.portfolio-section .gallery-filter-menu li:hover,
+.portfolio-section .gallery-filter-menu li.filter-active {
+    color: var(--accent-color);
+}
+
+@media (max-width: 575px) {
+    .portfolio-section .gallery-filter-menu li {
+        font-size: 13px;
+        margin: 0 2px;
+        padding: 6px 12px;
+    }
+}
+
+/* High-Performance Flexible Response Grid replacing Isotope/Bootstrap Row constraints */
+.portfolio-section .gallery-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.portfolio-section .gallery-card-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    /* Matches clean modern visual standards */
+}
+
+.portfolio-section .responsive-gallery-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--transition-smooth);
+}
+
+/* Zooms background image on card item interactions */
+.portfolio-section .gallery-card-item:hover .responsive-gallery-img {
+    transform: scale(1.05);
+}
+
+/* Slide Up Interactive Metadata Overlay (Hidden default state) */
+.portfolio-section .gallery-card-item .gallery-card-info {
+    opacity: 0;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: -20px;
+    /* Prepares it to slide upward seamlessly */
+    z-index: 3;
+    transition: all var(--transition-smooth);
+    background: color-mix(in srgb, var(--background-color), transparent 10%);
+    backdrop-filter: blur(8px);
+    /* Frosted premium glass effect added */
+    -webkit-backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-section .gallery-card-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    padding-right: 65px;
+    margin-bottom: 5px;
+}
+
+.portfolio-section .gallery-card-info p {
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    font-family: var(--default-font);
+    font-size: 14px;
+    margin-bottom: 0;
+    padding-right: 65px;
+}
+
+/* Action Trigger Inline Layout Anchor Handles Wrapper */
+.portfolio-section .gallery-interaction-links {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.portfolio-section .lightbox-trigger-btn,
+.portfolio-section .details-route-btn {
+    font-size: 20px;
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    transition: color var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.portfolio-section .lightbox-trigger-btn:hover,
+.portfolio-section .details-route-btn:hover {
+    color: var(--accent-color);
+}
+
+/* Reveal information card layer cleanly on hover triggers */
+.portfolio-section .gallery-card-item:hover .gallery-card-info {
+    opacity: 1;
+    bottom: 20px;
+    /* Slides seamlessly up into position */
+}
+
+
+
+.pricing-section .pricing-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+}
+
+/* Two-Column responsive balancing grid replacing Bootstrap row utilities */
+.pricing-section .pricing-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px var(--grid-gutter);
+    /* Sets precise vertical row separation widths */
+}
+
+/* Individual Flexbox Menu Rows aligning Name Left and Price Right */
+.pricing-section .pricing-menu-card {
+    border-bottom: 1px dashed color-mix(in srgb, var(--default-color), transparent 60%);
+    width: 100%;
+    height: 100%;
+    padding: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pricing-section .pricing-item-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+}
+
+.pricing-section .pricing-item-cost {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--default-font);
+    color: var(--accent-color);
+}
+
+/* Snaps menus down into an organized single row on mobile screens */
+@media (max-width: 768px) {
+    .pricing-section .pricing-menu-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+
+.faq-section .faq-section-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+}
+
+/* Asymmetric Grid Architecture replacing Bootstrap's col-lg-4 and col-lg-8 elements */
+.faq-section .faq-split-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* 1/3 layout space left, 2/3 layout space right */
+    gap: 40px;
+    align-items: start;
+}
+
+/* Left block heading components styling */
+.faq-section .faq-intro-content h3 {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.faq-section .faq-intro-content h3 strong {
+    font-weight: 700;
+}
+
+.faq-section .faq-intro-content p {
+    font-family: var(--default-font);
+    font-size: 15px;
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    margin-top: 15px;
+}
+
+/* Right block accordion list boxes container layout */
+.faq-section .faq-accordion-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Individual Accordion Card Panel Blocks */
+.faq-section .faq-accordion-item {
+    background-color: var(--surface-color);
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: background-color var(--transition-smooth);
+}
+
+.faq-section .faq-accordion-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Clicking Header Layout mapping containing text items and indicator chevron toggle */
+.faq-section .faq-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 100%;
+}
+
+.faq-section .faq-accordion-item h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 40px 0 0;
+    /* Clear right-hand padding constraint to preserve toggle visibility bounds */
+    transition: color var(--transition-smooth);
+    display: flex;
+    align-items: flex-start;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+}
+
+.faq-section .faq-num {
+    color: var(--accent-color);
+    padding-right: 8px;
+}
+
+.faq-section .faq-accordion-item:hover h3 {
+    color: var(--accent-color);
+}
+
+/* Pure CSS high-performance expandable grid transition channel pipeline */
+.faq-section .faq-accordion-item .faq-item-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--transition-smooth), opacity var(--transition-smooth), padding var(--transition-smooth);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.faq-section .faq-accordion-item .faq-item-body p {
+    margin-bottom: 0;
+    overflow: hidden;
+    font-family: var(--default-font);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Absolute Floating Action Arrow Toggle Controls */
+.faq-section .faq-toggle-icon {
+    position: absolute;
+    top: 24px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 1;
+    transition: transform var(--transition-smooth), color var(--transition-smooth);
+    cursor: pointer;
+    color: var(--default-color);
+}
+
+.faq-section .faq-toggle-icon:hover {
+    color: var(--accent-color);
+}
+
+.faq-section .faq-active h3 {
+    color: var(--accent-color);
+}
+
+/* Unlocks fractional track height dynamically to display answer strings cleanly */
+.faq-section .faq-active .faq-item-body {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    opacity: 1;
+    padding-top: 15px;
+}
+
+/* Smoothly rotates fontawesome chevron element 90 degrees downward */
+.faq-section .faq-active .faq-toggle-icon {
+    transform: rotate(90deg);
+    color: var(--accent-color);
+}
+
+/* Snaps structural layout rows into 1 single column on tablet viewports */
+@media (max-width: 991px) {
+    .faq-section .faq-split-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+
+/* ========================================================================= */
+/* 25. FIXED TESTIMONIALS SLIDER INFRASTRUCTURE                              */
+/* ========================================================================= */
+
+.testimonials-slider-section {
+    padding: 80px 0;
+    position: relative;
+    width: 100%;
+}
+
+.testimonials-slider-section::before {
+    content: "";
+    background: color-mix(in srgb, var(--background-color), transparent 30%);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.testimonials-slider-section .testimonials-parallax-bg {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* THE FIX: Main Viewport Window */
+.testimonials-slider-section .testimonials-swiper-instance {
+    position: relative;
+    overflow: hidden;
+    /* Clips out outside cards */
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    z-index: 3;
+}
+
+/* THE CRITICAL FIX: Forces cards into an unbroken horizontal row line */
+.testimonials-slider-section .swiper-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    /* Staggeringly forces cards side-by-side */
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Drives smooth horizontal slide */
+}
+
+/* Individual slide dimensions layout bounds */
+.testimonials-slider-section .swiper-slide {
+    flex: 0 0 100% !important;
+    /* Forces each individual card to span exactly full container width */
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Presentation Interior Elements Formatting Mapping */
+.testimonials-slider-section .testimonial-card-box {
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+}
+
+.testimonials-slider-section .testimonial-avatar-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 6px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    margin: 0 auto 15px auto;
+    object-fit: cover;
+}
+
+.testimonials-slider-section .client-profile-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.testimonials-slider-section .client-profile-title {
+    font-size: 14px;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    margin-bottom: 15px;
+}
+
+.testimonials-slider-section .client-rating-stars i {
+    color: #ffc107;
+    margin: 0 2px;
+}
+
+.testimonials-slider-section .client-review-text {
+    font-style: italic;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+/* Dots Pagination Indicators Placement */
+.testimonials-slider-section .testimonial-bullets-wrap {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.testimonials-slider-section .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: color-mix(in srgb, var(--default-color), transparent 50%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.testimonials-slider-section .swiper-pagination-bullet-active {
+    background-color: var(--accent-color, #0078ff);
+    transform: scale(1.2);
+}
+
+/* Constrains text presentation limits cleanly across roomy desktop views */
+@media (min-width: 992px) {
+    .testimonials-slider-section .client-review-text {
+        width: 80%;
+    }
+}
+
+
+
+.contact-section .contact-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+}
+
+/* Contact Upper Info Plate Panel */
+.contact-section .contact-info-wrap-panel {
+    background-color: var(--surface-color);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+/* Framework-Free Side-by-Side Metadata Cards Grid Matrix */
+.contact-section .contact-info-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contact-section .contact-info-card-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Circular Icon Border Vectors */
+.contact-section .contact-card-icon-box i {
+    font-size: 20px;
+    color: var(--accent-color);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all var(--transition-smooth);
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 40%);
+    margin-right: 15px;
+}
+
+.contact-section .contact-card-text-box h3 {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    margin: 0 0 2px 0;
+}
+
+.contact-section .contact-card-text-box p {
+    padding: 0;
+    margin-bottom: 0;
+    font-family: var(--default-font);
+    font-size: 14px;
+}
+
+/* Inverts icon colors on hover actions */
+.contact-section .contact-info-card-item:hover .contact-card-icon-box i {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    transform: scale(1.05);
+}
+
+/* Main Interactive Communications Form Plate */
+.contact-section .clean-interactive-form {
+    background-color: var(--surface-color);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Vertical Form Internal Input Structural Grid Alignment Layer */
+.contact-section .form-inputs-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Side-by-Side Flex Box Input Row Wrapper (Name & Email fields) */
+.contact-section .form-field-group-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.contact-section .form-input-control-box {
+    flex: 1;
+}
+
+.contact-section .full-width-field {
+    width: 100%;
+}
+
+/* Custom Core Form Fields Styling */
+.contact-section .custom-form-field {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px 15px;
+    border-radius: 6px;
+    color: var(--default-color);
+    background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+    font-family: var(--default-font);
+    transition: border-color var(--transition-smooth);
+}
+
+.contact-section .custom-form-field:focus {
+    border-color: var(--accent-color);
+}
+
+.contact-section .custom-form-field::placeholder {
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact-section .textarea-field {
+    resize: vertical;
+}
+
+/* Form Action Submission Controls Footer area */
+.contact-section .form-submission-footer-box {
+    text-align: center;
+    width: 100%;
+}
+
+.contact-section .form-submit-action-btn {
+    color: var(--contrast-color);
+    background: var(--accent-color);
+    border: 0;
+    padding: 12px 35px;
+    transition: all var(--transition-smooth);
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contact-section .form-submit-action-btn:hover {
+    background: color-mix(in srgb, var(--accent-color), transparent 20%);
+    transform: translateY(-2px);
+}
+
+/* Contact Page Responsive Breakpoint Constraints */
+@media (max-width: 991px) {
+    .contact-section .contact-info-cards-grid {
+        grid-template-columns: 1fr;
+        /* Stacks information panel cards vertically on tablets */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section .form-field-group-row {
+        flex-direction: column;
+        /* Stacks Name and Email fields vertically on mobiles */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .contact-section .clean-interactive-form {
+        padding: 20px;
+    }
+}
+
+
+.portfolio-details-section {
+    padding: 60px 0;
+    width: 100%;
+}
+
+.portfolio-details-section .details-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+}
+
+.portfolio-details-section .portfolio-details-slider img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.portfolio-details-section .swiper-wrapper {
+    height: auto;
+}
+
+/* Custom Swiper Next/Prev Navigation Pointers overrides */
+.portfolio-details-section .swiper-button-prev,
+.portfolio-details-section .swiper-button-next {
+    width: 48px;
+    height: 48px;
+}
+
+.portfolio-details-section .swiper-button-prev::after,
+.portfolio-details-section .swiper-button-next::after {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.15);
+    font-size: 24px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-smooth);
+}
+
+.portfolio-details-section .swiper-button-prev:hover::after,
+.portfolio-details-section .swiper-button-next:hover::after {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 575px) {
+
+    .portfolio-details-section .swiper-button-prev,
+    .portfolio-details-section .swiper-button-next {
+        display: none;
+        /* Suppresses arrow visibility maps on micro phone layouts */
+    }
+}
+
+/* Slider Pagination Setup */
+.portfolio-details-section .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+}
+
+.portfolio-details-section .swiper-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+    opacity: 1;
+}
+
+.portfolio-details-section .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: var(--accent-color);
+}
+
+/* Sidebar Project Specifications Panel Info box */
+.portfolio-details-section .portfolio-info-box h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+}
+
+.portfolio-details-section .portfolio-info-box h3::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    bottom: 0;
+}
+
+.portfolio-details-section .portfolio-info-box ul {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+}
+
+.portfolio-details-section .portfolio-info-box ul li {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+
+.portfolio-details-section .portfolio-info-box ul strong {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: color-mix(in srgb, var(--default-color), transparent 50%);
+    font-size: 14px;
+}
+
+/* Visit Live Website Button Component */
+.portfolio-details-section .btn-visit {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 40px;
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all var(--transition-smooth);
+}
+
+.portfolio-details-section .btn-visit:hover {
+    background: color-mix(in srgb, var(--accent-color), transparent 20%);
+    transform: translateY(-2px);
+}
+
+/* Left/Main Description Column Text blocks */
+.portfolio-details-section .portfolio-description-box h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+}
+
+.portfolio-details-section .portfolio-description-box p {
+    padding: 0;
+    line-height: 1.6;
+    font-family: var(--default-font);
+    margin-bottom: 1.5rem;
+}
+
+/* Sidebar Highlighted Inlined Testimonial Card blocks */
+.portfolio-details-section .details-testimonial-card {
+    padding: 30px;
+    position: relative;
+    background: color-mix(in srgb, var(--default-color), transparent 97%);
+    margin-bottom: 50px;
+    border-radius: 6px;
+}
+
+.portfolio-details-section .details-testimonial-card .testimonial-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 6px solid var(--background-color);
+    float: left;
+    margin: 0 20px 10px 0;
+    object-fit: cover;
+}
+
+.portfolio-details-section .details-testimonial-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    padding-top: 10px;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+}
+
+.portfolio-details-section .details-testimonial-card h4 {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0 0 15px 0;
+    font-family: var(--default-font);
+}
+
+.portfolio-details-section .details-testimonial-card .quote-icon-left,
+.portfolio-details-section .details-testimonial-card .quote-icon-right {
+    color: color-mix(in srgb, var(--accent-color), transparent 50%);
+    font-size: 26px;
+    line-height: 1;
+}
+
+.portfolio-details-section .details-testimonial-card .quote-icon-left {
+    display: inline-block;
+    left: -5px;
+    position: relative;
+}
+
+.portfolio-details-section .details-testimonial-card .quote-icon-right {
+    display: inline-block;
+    right: -5px;
+    position: relative;
+    top: 10px;
+    transform: scale(-1, -1);
+}
+
+.portfolio-details-section .details-testimonial-card p {
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ========================================================================= */
+/* 28. SERVICE DETAILS SUB-PAGE INFRASTRUCTURE                               */
+/* ========================================================================= */
+
+.service-details-section {
+    padding: 60px 0;
+    width: 100%;
+}
+
+.service-details-section .details-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+}
+
+/* Sidebar Navigation Component for Services Pages */
+.service-details-section .services-list-sidebar {
+    background-color: var(--surface-color);
+    padding: 10px 30px;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+/* Individual Vertical Anchors inside the sidebar list */
+.service-details-section .services-list-sidebar a {
+    display: block;
+    line-height: 1;
+    padding: 8px 0 8px 15px;
+    border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+    margin: 20px 0;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    font-family: var(--nav-font);
+    transition: all var(--transition-smooth);
+}
+
+.service-details-section .services-list-sidebar a.active {
+    color: var(--heading-color);
+    font-weight: 700;
+    border-color: var(--accent-color);
+}
+
+.service-details-section .services-list-sidebar a:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.service-details-section .services-feature-img {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.service-details-section h3 {
+    font-size: 26px;
+    font-weight: 700;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.service-details-section h4 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    margin-bottom: 12px;
+}
+
+.service-details-section p {
+    font-size: 15px;
+    line-height: 1.6;
+    font-family: var(--default-font);
+    margin-bottom: 15px;
+}
+
+/* Checklist Layout inside Service Specification Sheets */
+.service-details-section .details-features-list {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+    font-family: var(--default-font);
+}
+
+.service-details-section .details-features-list li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.service-details-section .details-features-list i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+/* ========================================================================= */
+/* 29. STARTER / UTILITY SECTION (CONVERTED TO A UTILITY CTA DESIGN)        */
+/* ========================================================================= */
+
+.starter-section {
+    padding: 80px 0;
+    background-color: var(--surface-color);
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    width: 100%;
+}
+
+/* Centered content block layout */
+.starter-section .starter-container {
+    width: 100%;
+    max-width: 800px;
+    /* Kept focused to stand out elegantly */
+    margin: 0 auto;
+    padding: 0 var(--grid-gutter);
+    text-align: center;
+}
+
+.starter-section .starter-title {
+    font-size: 36px;
+    font-weight: 700;
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.starter-section .starter-description {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: var(--default-font);
+    color: var(--default-color);
+    margin-bottom: 30px;
+}
+
+/* Interactive Utility Button Component */
+.starter-section .starter-action-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    font-family: var(--nav-font);
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+    transition: all var(--transition-smooth);
+    text-decoration: none;
+}
+
+.starter-section .starter-action-btn:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 60%);
+}
